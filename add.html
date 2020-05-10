@@ -56,6 +56,9 @@
     <span class="input-group-text">Deadline</span>
   </div>
     <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+        <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
@@ -70,7 +73,7 @@
 $('#date').datepicker({
     todayBtn: "linked",
     autoclose: true,
-    todayHighlight: true
+    todayHighlight: true,
 });
 </script>
 
