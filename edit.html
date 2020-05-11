@@ -1,267 +1,330 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>TODO's</title>
-    <style type="text/css" media="screen">
-      .editbtn {
-        background-color: Transparent;
-        border: none;
-        padding: 5px;
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>TODO's</title>
+  <style type="text/css" media="screen">
+    .editbtn {
+      background-color: Transparent;
+      border: none;
+      padding: 5px;
+
+    }
+
+
+    .table {
+      margin-top: 10rem;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      font-size: 0.9em;
+    }
+
+    .table thead tr {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+
+    .table tbody tr:last-of-type {
+      border-bottom: 2px solid #007bff;
+    }
+
+
+    .in {
+      width: 110px;
+    }
+
+    .edit {
+
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    h2 {
+      margin-bottom: .5rem;
+      margin-top: .5rem;
+    }
+    .container{
+      padding-right: 0;
+    }
+    .todo {
+      background-color: #66BEE8;
+      padding-bottom: 10px;
+      border: 10px solid white;
+
+
+
+
+
+
+
+    }
+
+    @media (max-width: 576px) {
+      .buttons {
+        float: right;
 
       }
 
+      .dates {
+        padding: 0;
+        float: left;
+      }
+
+
+
+      .edit {
+
+        padding-top: 20px;
+      }
 
       .table {
-        margin-top: 10rem;
-        border-radius: 5px 5px 0 0;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-        font-size: 0.9em;
-      }
-      .table thead tr{
-        background-color: #007bff;
-        color: #ffffff;
-              }
-      .table tbody tr:last-of-type {
-        border-bottom: 2px solid #007bff;
+        margin-top: 2rem;
       }
 
+      #wraper {
+        padding: 0;
 
-      .in{
-        width: 110px;
       }
-      .edit{
 
-        padding-top: 100px;
-        padding-bottom: 50px;
+      .TODO {
+        width: 180px;
       }
-      h2{
-        padding-top: 50px;
-      }
-      @media (max-width: 576px) {
-        h2{
-          padding-top: 20px;
-        }
-        .dates{
-          float:left;
-        }
-        .buttons{
-          float:right;
 
-        }
-        .edit{
+    }
+  </style>
+</head>
 
-          padding-top: 20px;
-        }
-        .table {
-          margin-top: 2rem;
-        }
-          #wraper{
-            padding: 0;
-
-          }
-          .TODO{
-            width:180px;
-          }
-
-       }
-
-
-    </style>
-  </head>
-  <body>
-<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
     <a class="navbar-brand" href="#"><img src="https://cdn.pixabay.com/photo/2017/01/13/01/22/ok-1976099_960_720.png" alt="Logo" width="30" height="30"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="home.html">
-      Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="add.html">Add Task</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Edit</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="impressum.html">Impressum</a>
-    </li>
-  </ul>
-</div>
-</nav>
-
-
-
-
-
-
-
-
-<div class="container">
-  <div class="row">
-
-    <div class="col-12 col-lg-4 col-sm-8">
-      <h2>TODO 1</h2>
-      <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" style="width:100%">Loremdsfa ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
-
-
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">
+            Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="add.html">Add Task</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Edit</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="impressum.html">Impressum</a>
+        </li>
+      </ul>
     </div>
-    <div class="col-12 col-lg-2 col-sm-4 edit" >
-        <div class="dates" >
+  </nav>
+
+
+
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-lg-6 row container todo">
+          <div class="col-12  col-sm-8">
+              <h2>TODO 1</h2>
+              <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10" wrap="hard"
+                style="width:100%">Make lasagna12345</textarea>
+          </div>
+          <div class="col-12 col-sm-4 edit">
+              <div class="dates">
+                <input type="text" class="form-control in" aria-label="Task" value="22%">
+                <input class="form-control in" id="date" name="date" value="01/06/2020" type="text" />
+              </div>
+              <div class="buttons">
+                <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+                <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-12 col-lg-6 row container todo">
+          <div class="col-12  col-sm-8">
+              <h2>TODO 2</h2>
+              <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10" wrap="hard"
+                style="width:100%">Loremdsfa ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
+          </div>
+          <div class="col-12 col-sm-4 edit">
+              <div class="dates">
+                <input type="text" class="form-control in" aria-label="Task" value="50%">
+                <input class="form-control in" id="date" name="date" value="01/06/2020" type="text" />
+              </div>
+              <div class="buttons">
+                <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+                <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-12 col-lg-6 row container todo">
+          <div class="col-12  col-sm-8">
+              <h2>TODO 3</h2>
+              <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10" wrap="hard"
+                style="width:100%">Read a book </textarea></td>
+          </div>
+          <div class="col-12 col-sm-4 edit">
+              <div class="dates">
+                <input type="text" class="form-control in" aria-label="Task" value="99%">
+                <input class="form-control in" id="date" name="date" value="01/06/2222" type="text" />
+              </div>
+              <div class="buttons">
+                <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+                <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-12 col-lg-6 row container todo">
+          <div class="col-12  col-sm-8">
+              <h2>TODO 4</h2>
+              <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10" wrap="hard"
+                style="width:100%">Zrobic lasagne kurrrr</textarea></td>
+          </div>
+          <div class="col-12 col-sm-4 edit">
+              <div class="dates">
+                <input type="text" class="form-control in" aria-label="Task" value="11%">
+                <input class="form-control in" id="date" name="date" value="01/06/2020" type="text" />
+              </div>
+              <div class="buttons">
+                <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+                <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-12 col-lg-4 col-sm-8">
+        <h2>TODO 3</h2>
+        <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10" wrap="hard"
+          style="width:100%">Loremdsfa ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
+
+
+      </div>
+      <div class="col-12 col-lg-2 col-sm-4 edit">
+        <div class="dates">
           <input type="text" class="form-control in" aria-label="Task" value="50%">
-          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text"/>
+          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text" />
         </div>
-          <div class="buttons">
+        <div class="buttons">
 
 
           <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
           <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
-            </div>
-
-    </div>
-
-    <div class="col-12 col-lg-4 col-sm-8">
-      <h2>TODO 2</h2>
-      <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" style="width:100%">Zrobic lasagne</textarea></td>
-
-
-    </div>
-    <div class="col-12 col-lg-2 col-sm-4 edit" >
-        <div class="dates" >
-          <input type="text" class="form-control in" aria-label="Task" value="50%">
-          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text"/>
         </div>
-          <div class="buttons">
+
+      </div>
+
+      <div class="col-12 col-lg-4 col-sm-8">
+        <h2>TODO 4</h2>
+        <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10" wrap="hard" style="width:100%">Read a book</textarea></td>
+
+
+      </div>
+      <div class="col-12 col-lg-2 col-sm-4 edit">
+        <div class="dates">
+          <input type="text" class="form-control in" aria-label="Task" value="50%">
+          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text" />
+        </div>
+        <div class="buttons">
 
 
           <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
           <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
-            </div>
+        </div>
 
+      </div>
     </div>
   </div>
-  <div class="row">
 
-    <div class="col-12 col-lg-4 col-sm-8">
-      <h2>TODO 3</h2>
-      <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" style="width:100%">Loremdsfa ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
-
-
-    </div>
-    <div class="col-12 col-lg-2 col-sm-4 edit" >
-        <div class="dates" >
-          <input type="text" class="form-control in" aria-label="Task" value="50%">
-          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text"/>
-        </div>
-          <div class="buttons">
-
-
-          <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
-          <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
-            </div>
-
-    </div>
-
-    <div class="col-12 col-lg-4 col-sm-8">
-      <h2>TODO 4</h2>
-      <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" style="width:100%">Read a book</textarea></td>
-
-
-    </div>
-    <div class="col-12 col-lg-2 col-sm-4 edit" >
-        <div class="dates" >
-          <input type="text" class="form-control in" aria-label="Task" value="50%">
-          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text"/>
-        </div>
-          <div class="buttons">
-
-
-          <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
-          <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
-            </div>
-
-    </div>
-  </div>
-</div>
-
-<div id="wraper" class="container table-responsive" >
+  <div id="wraper" class="container table-responsive">
     <table class="table table-sm">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col" >TODO</th>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">TODO</th>
 
-      <th scope="col">Progress   <br>
-      Deadline</th>
-
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td ><textarea class="form-control " id="exampleFormControlTextarea1" rows="9"  wrap="hard" >Make lasagne 12345</textarea></td>
-      <td><input type="text" class="form-control" aria-label="Task" value="50%">
-          <input class="form-control" id="date" name="date" value="01/06/2020" type="text"/>
-          <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
-          <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button></td>
-        </td>
+          <th scope="col">Progress <br>
+            Deadline</th>
 
 
-    <tr>
-      <th scope="row">2
-      </th>
-      <td><textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" >Loremdsfa ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
-      <td><input type="text" class="form-control in" aria-label="Task" value="50%">
-          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text"/>
-          <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
-          <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button></td>
-        </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td><textarea class="form-control " id="exampleFormControlTextarea1" rows="9" wrap="hard">Make lasagne 12345</textarea></td>
+          <td><input type="text" class="form-control" aria-label="Task" value="50%">
+            <input class="form-control" id="date" name="date" value="01/06/2020" type="text" />
+            <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+            <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button></td>
+          </td>
 
-    </tr>
 
-    <tr>
-      <th scope="row">3
-      </th>
-      <td><textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" >Kommodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
-      <td><input type="text" class="form-control" aria-label="Task" value="90%">
-          <input class="form-control" id="date" name="date" value="01/06/2020" type="text"/>
-          <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
-          <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button></td>
-        </td>
+        <tr>
+          <th scope="row">2
+          </th>
+          <td><textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"
+              wrap="hard">Loremdsfa ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
+          <td><input type="text" class="form-control in" aria-label="Task" value="50%">
+            <input class="form-control in" id="date" name="date" value="01/06/2020" type="text" />
+            <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+            <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button></td>
+          </td>
 
-    </tr>
+        </tr>
 
-    </tbody>
-  </table>
+        <tr>
+          <th scope="row">3
+          </th>
+          <td><textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10" wrap="hard">Kommodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
+          <td><input type="text" class="form-control" aria-label="Task" value="90%">
+            <input class="form-control" id="date" name="date" value="01/06/2020" type="text" />
+            <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+            <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button></td>
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
   </div>
 
 
 
 
-<script>
-$('#date').datepicker({
-    todayBtn: "linked",
-    autoclose: true,
-    todayHighlight: true,
-});
-</script>
+  <script>
+    $('#date').datepicker({
+      todayBtn: "linked",
+      autoclose: true,
+      todayHighlight: true,
+    });
+  </script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
 </html>
