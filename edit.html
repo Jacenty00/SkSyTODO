@@ -34,8 +34,32 @@
       }
 
 
+      .in{
+        width: 110px;
+      }
+      .edit{
 
+        padding-top: 100px;
+        padding-bottom: 50px;
+      }
+      h2{
+        padding-top: 50px;
+      }
       @media (max-width: 576px) {
+        h2{
+          padding-top: 20px;
+        }
+        .dates{
+          float:left;
+        }
+        .buttons{
+          float:right;
+
+        }
+        .edit{
+
+          padding-top: 20px;
+        }
         .table {
           margin-top: 2rem;
         }
@@ -76,6 +100,101 @@
   </ul>
 </div>
 </nav>
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-12 col-lg-4 col-sm-8">
+      <h2>TODO 1</h2>
+      <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" style="width:100%">Loremdsfa ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
+
+
+    </div>
+    <div class="col-12 col-lg-2 col-sm-4 edit" >
+        <div class="dates" >
+          <input type="text" class="form-control in" aria-label="Task" value="50%">
+          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text"/>
+        </div>
+          <div class="buttons">
+
+
+          <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+          <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+            </div>
+
+    </div>
+
+    <div class="col-12 col-lg-4 col-sm-8">
+      <h2>TODO 2</h2>
+      <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" style="width:100%">Zrobic lasagne</textarea></td>
+
+
+    </div>
+    <div class="col-12 col-lg-2 col-sm-4 edit" >
+        <div class="dates" >
+          <input type="text" class="form-control in" aria-label="Task" value="50%">
+          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text"/>
+        </div>
+          <div class="buttons">
+
+
+          <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+          <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+            </div>
+
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-12 col-lg-4 col-sm-8">
+      <h2>TODO 3</h2>
+      <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" style="width:100%">Loremdsfa ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
+
+
+    </div>
+    <div class="col-12 col-lg-2 col-sm-4 edit" >
+        <div class="dates" >
+          <input type="text" class="form-control in" aria-label="Task" value="50%">
+          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text"/>
+        </div>
+          <div class="buttons">
+
+
+          <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+          <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+            </div>
+
+    </div>
+
+    <div class="col-12 col-lg-4 col-sm-8">
+      <h2>TODO 4</h2>
+      <textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" style="width:100%">Read a book</textarea></td>
+
+
+    </div>
+    <div class="col-12 col-lg-2 col-sm-4 edit" >
+        <div class="dates" >
+          <input type="text" class="form-control in" aria-label="Task" value="50%">
+          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text"/>
+        </div>
+          <div class="buttons">
+
+
+          <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
+          <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+            </div>
+
+    </div>
+  </div>
+</div>
+
 <div id="wraper" class="container table-responsive" >
     <table class="table table-sm">
   <thead>
@@ -104,8 +223,8 @@
       <th scope="row">2
       </th>
       <td><textarea class="form-control TODO" id="exampleFormControlTextarea1" rows="10"  wrap="hard" >Loremdsfa ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</textarea></td>
-      <td><input type="text" class="form-control" aria-label="Task" value="50%">
-          <input class="form-control" id="date" name="date" value="01/06/2020" type="text"/>
+      <td><input type="text" class="form-control in" aria-label="Task" value="50%">
+          <input class="form-control in" id="date" name="date" value="01/06/2020" type="text"/>
           <button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20"></button>
           <button class="editbtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button></td>
         </td>
