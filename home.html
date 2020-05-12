@@ -34,8 +34,65 @@
           #wraper{
             padding: 0;
 
+
           }
+          table, thead, tbody, th, td, tr { 
+    display: block; 
+  }
+  thead tr { 
+   display: none;
+  }
+  
+  tr { border: 1px solid #ccc; }
+  
+  td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+  }
        }
+       @media (max-width: 300px) {
+          #wraper{
+            padding: 0;
+
+
+          }
+  table, thead, tbody, th, td, tr { 
+    display: block; 
+  }
+  thead tr { 
+   display: none;
+  }
+  
+  tr {
+    padding-top: 10px;
+  margin-bottom: 10px; }
+  
+  td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+  }
+  .table tbody td:last-of-type {
+        border-bottom: 2px solid #007bff;
+      }
+  
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+  }
+       }
+
 
 
     </style>
