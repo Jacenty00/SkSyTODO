@@ -1,4 +1,4 @@
-.editbtn {
+.editbtn, .deletebtn {
     background-color: Transparent;
     border: none;
     padding: 5px;
@@ -9,7 +9,7 @@
     margin-top: 0.5rem;
 }
 
-#lista {
+.list{
     margin-top: 3rem;
 }
 
@@ -64,7 +64,6 @@
 .task {
     height: 200px;
     background-color: #f2f2f2;
-
     border-radius: 10px;
     padding: 5px;
 }
@@ -88,7 +87,7 @@
     margin-left: 0px;
 }
 
-.date {
+.deadline, .progres {
     text-align: center;
     padding: 2px;
     border: 0.5px solid #007bff;
