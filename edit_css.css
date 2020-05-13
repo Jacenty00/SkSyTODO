@@ -21,6 +21,10 @@
         background-color: #66BEE8;
 
     }
+    .task-id {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
 
     .todo {
         padding: 0;
