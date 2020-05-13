@@ -1,0 +1,131 @@
+.editbtn {
+    background-color: Transparent;
+    border: none;
+    padding: 5px;
+  }
+  .task-id{
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .table {
+    margin-top: 15rem;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-size: 0.9em;
+  }
+
+  #lista {
+    margin-top: 3rem;
+  }
+  .table thead tr{
+    background-color: #007bff;
+    color: #ffffff;
+          }
+  .table tbody tr:last-of-type {
+    border-bottom: 2px solid #007bff;
+  }
+  @media (max-width: 576px) {
+      #wraper{
+        padding: 0;
+
+      }
+   }
+
+
+   .edit {
+
+     padding-top: 50px;
+     padding-bottom: 50px;
+   }
+
+   h4 {
+     margin-bottom: .5rem;
+     margin-top: .5rem;
+   }
+
+   .todo2{
+     padding: 0;
+     background-color: #f2f2f2;
+
+   }
+   .todo {
+     padding: 0;
+     margin:10px;
+     margin-bottom: 20px;
+     background-color: #f2f2f2;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+      padding-bottom:10px;
+      border-bottom: 2px solid #007bff;
+      border-radius: 5px;
+
+
+
+
+
+
+
+
+   }
+
+   @media (max-width: 576px) {
+     .buttons {
+       float: right;
+
+     }
+
+     .dates {
+       padding: 0;
+       float: left;
+     }
+
+
+
+     .edit {
+
+       padding-top: 20px;
+     }
+
+     .table {
+       margin-top: 2rem;
+     }
+
+     #wraper {
+       padding: 0;
+
+     }
+   }
+
+
+   .task{
+     height: 200px;
+     background-color: #f2f2f2;
+
+     border-radius:10px;
+     padding:5px;
+   }
+   @media (max-width:280px) {
+     .task{
+       height: auto;
+       margin-bottom: auto;
+
+     }
+     .container{
+      margin-left:0px;
+      margin-right:0px; 
+       padding-left:5px;
+       padding-right:5px;
+      }
+
+   }
+   .row{
+      margin-right: 0px;
+      margin-left: 0px;
+        }
+    .date{
+      text-align:center;
+      padding:2px;
+      border: 0.5px solid #007bff;
+      border-radius:10px;
+    }
