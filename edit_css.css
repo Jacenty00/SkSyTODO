@@ -1,0 +1,74 @@
+    .editbtn {
+        background-color: Transparent;
+        border: none;
+        padding: 5px;
+
+    }
+
+    .row {
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    .edit {
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .todo2 {
+        padding: 0;
+        background-color: #66BEE8;
+
+    }
+
+    .todo {
+        padding: 0;
+        margin: 10px;
+        margin-bottom: 20px;
+        background-color: #f2f2f2;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        padding-bottom: 10px;
+        border-bottom: 2px solid #007bff;
+        border-radius: 5px;
+    }
+
+    @media (max-width: 576px) {
+        .buttons {
+            float: right;
+
+        }
+
+        .dates {
+            padding: 0;
+            float: left;
+        }
+
+        .edit {
+
+            padding-top: 20px;
+        }
+
+        .table {
+            margin-top: 2rem;
+        }
+
+        #wraper {
+            padding: 0;
+        }
+    }
+
+    @media (max-width: 280px) {
+        .container {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+
+    .in {
+        border: 0.5px solid #007bff;
+    }
+
+    .form-control {
+        border: 0.5px solid #007bff;
+    }
