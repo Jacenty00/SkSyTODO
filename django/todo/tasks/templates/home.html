@@ -220,7 +220,37 @@
           </div>
       </div>
   </div>
+  {% block content %}
+  {% for task in tasks %}
+  {%  if not forloop.counter|divisibleby:2 %}
+  <div class="row">
+  {% endif %}  
+  <div class="col-12 col-lg-6 row container ">
+    <div class="row container todo ">
+        <div class="col-12  col-sm-8">
 
+              <p class="task-id">Task #{{task.id}}</p>
+              <p class=" task"
+                style="width:100%">{{task.task_text}}
+              </p>
+        </div>
+        <div class="col-12 col-sm-4 edit">
+              <div class="dates">
+                <p class="progres">Progress:<br> {{task.task_progress}}%</p>
+                <p class="deadline">Deadline: <br> {{task.task_deadline}}</p>
+              </div>
+              <div class="buttons">
+                <a href="edit.html#TODO-7" ><button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20">Edit</button></a>
+                <button class="deletebtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+              </div>
+        </div>
+    </div>
+  </div>
+  {%  if forloop.counter|divisibleby:2 %}
+  </div>
+  {% endif %} 
+  {% endfor %}
+  {% endblock %}
 </div>
 
 
