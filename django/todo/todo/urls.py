@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from tasks.views import add_view , impressum_view , edit_view , home_view
+from tasks.views import add_view , impressum_view , edit_view , home_view, add_todo
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
@@ -23,5 +23,6 @@ urlpatterns = [
     path('edit/', edit_view, name='edit'),
     path('edit.html', edit_view, name='edit'),
     path('impressum/', impressum_view, name='impressum'),
+    path('add_todo/', add_todo, name='add_todo')
 
 ]

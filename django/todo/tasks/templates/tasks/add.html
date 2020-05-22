@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -42,13 +43,13 @@
 </nav>
 <div class="container">
 
-
+<form action="/add_todo/" method="post"> {% csrf_token %}
 <div class="input-group mb-3" style="margin-top: 15rem;">
 
   <div class="input-group-prepend">
     <span class="input-group-text">Task</span>
   </div>
-  <input type="text" maxlength="160" class="form-control" aria-label="Task" placeholder="Please input your TODO.   (Max 160 Characters)">
+  <input type="text" maxlength="160" class="form-control" aria-label="Task" name="task" placeholder="Please input your TODO.   (Max 160 Characters)">
 </div>
 
 <div class="input-group mb-3">
@@ -61,10 +62,11 @@
   <div class="input-group-prepend">
     <span class="input-group-text">Progress</span>
   </div>
-  <input type="text" class="form-control" aria-label="Progress" placeholder="Please input your task progress percentage as a whole number.">
+  <input type="text" class="form-control" aria-label="Progress" name="progress" placeholder="Please input your task progress percentage as a whole number.">
 </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
+</form>
   </div>
 <script>
 $('#date').datepicker({
