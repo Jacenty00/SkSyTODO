@@ -22,11 +22,15 @@ def add_todo(request):
     date_tmp = request.POST['date'].split('/')
     date = datetime.date(int(date_tmp[2]), int(date_tmp[0]), int(date_tmp[1]))
     progress = int(request.POST['progress'])
-    if progress >= 0 and progress <= 100:
-        task = Task(task_text = text, task_progress = progress, task_deadline = date)
-        task.save()
-        return redirect('/')
-    else:
-        return redirect('/add/')    
+    if (progress < 0 or progress > 100) or (date - datetime.date.today()).days < 0:
+        return redirect('/add/')  
+    task = Task(task_text = text, task_progress = progress, task_deadline = date)
+    task.save()
+    return redirect('/')
+  
 
-
+def del_todo(request):
+    id = request.POST['id']
+    to_delete = Task.objects.get(id = id)
+    to_delete.delete()
+    return redirect('/')

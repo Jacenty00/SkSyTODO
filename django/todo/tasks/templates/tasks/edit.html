@@ -59,7 +59,7 @@
         <div class="row container todo ">
           <div class="col-12  col-sm-8">
 
-            <p class="task-id">TODO {{task.id}}</p>
+            <p class="task-id">TODO {{forloop.counter}}</p>
             <textarea class="form-control TODO" id="TODO-{{task.id}}-textarea" rows="9" wrap="hard"
               style="width:100%">{{task.task_text}}
             </textarea></div>

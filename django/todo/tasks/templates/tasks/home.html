@@ -49,7 +49,7 @@
     <div class="row container todo ">
         <div class="col-12  col-sm-8">
 
-              <p class="task-id">Task #{{task.id}}</p>
+              <p class="task-id">Task #{{forloop.counter}}</p>
               <p class=" task"
                 style="width:100%">{{task.task_text}}
               </p>
@@ -61,7 +61,10 @@
               </div>
               <div class="buttons">
                 <a href="edit.html#TODO-{{task.id}}" ><button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20">Edit</button></a>
+                <form action="/del_todo/" method="post"> {% csrf_token %}
+                <input type='hidden' value='{{task.id}}' name='id'>
                 <button class="deletebtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+                </form>
               </div>
         </div>
     </div>
