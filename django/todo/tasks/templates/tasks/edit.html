@@ -60,19 +60,27 @@
           <div class="col-12  col-sm-8">
 
             <p class="task-id">TODO {{forloop.counter}}</p>
-            <textarea class="form-control TODO" id="TODO-{{task.id}}-textarea" rows="9" wrap="hard"
+            <textarea class="form-control TODO" id="TODO-{{task.id}}-textarea" name="text" form = "e-{{task.id}}" rows="9" wrap="hard"
               style="width:100%">{{task.task_text}}
             </textarea></div>
           <div class="col-12 col-sm-4 edit">
             <div class="dates">
-              Progress:
-              <input type="text" id="TODO-{{task.id}}-progress" class="form-control progres" aria-label="Task" value="{{task.task_progress}}%">
+              Progress in %:
+              <input type="text" name="progress" form = "e-{{task.id}}" id="TODO-{{task.id}}-progress" class="form-control progres" aria-label="Task" value="{{task.task_progress}}">
               Deadline:
-              <input class="form-control picker deadline " id="TODO-1-deadline" name="date" value="{{task.task_deadline}}" type="text" />
+              <input class="form-control picker deadline "   name="deadline" form = "e-{{task.id}}" id="TODO-1-deadline" name="date" value="{{task.task_deadline}}" type="text"  />
             </div>
             <div class="buttons">
-              <button class="editbtn" id ="TODO-{{task.id}}-save" ><img src="https://image.flaticon.com/icons/png/512/446/446044.png" alt="Edit" width="20" height="20">Save</button>
-              <button class="editbtn" id ="TODO-{{task.id}}-delete"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
+
+              <form action="/edit_todo/" method="post" id="e-{{task.id}}" style="display: none;"> {% csrf_token %}
+              <input type='hidden' value='{{task.id}}' name='id'>
+              </form>
+              <button class="editbtn" type="submit" form="e-{{task.id}}"  id ="TODO-{{task.id}}-save" ><img src="https://image.flaticon.com/icons/png/512/446/446044.png" alt="Edit" width="20" height="20">Save</button>
+
+              <form action="/del_todo/" method="post" id="d-{{task.id}}" style="display: none;"> {% csrf_token %}
+              <input type='hidden' value='{{task.id}}' name='id'>
+              </form>
+              <button class="editbtn"  type="submit" form="d-{{task.id}}"  id ="TODO-{{task.id}}-delete"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
 
             </div>
           </div>

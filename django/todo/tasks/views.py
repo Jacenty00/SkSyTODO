@@ -27,12 +27,37 @@ def add_todo(request):
         date = datetime.date(int(date_tmp[2]), int(date_tmp[0]), int(date_tmp[1]))
         progress = int(request.POST['progress'])
         if (progress < 0 or progress > 100) or (date - datetime.date.today()).days < 0:
-            return redirect('/add/')  
+            return redirect('/add/')
         task = Task(task_text = text, task_progress = progress, task_deadline = date)
         task.save()
         return redirect('/')
-    return Http404("No.")    
-  
+    return Http404("No.")
+
+
+def edit_todo(request):
+    if request.method == "POST":
+        id = request.POST['id']
+        new_text = request.POST['text']
+        new_progress = request.POST['progress']
+        new_deadline = request.POST['deadline']
+
+        print(request.POST)
+        try:
+            to_edit = Task.objects.get(id = id)
+            to_edit.task_text = new_text
+            to_edit.task_progress = new_progress
+            # TODO deadline
+            #to_edit.task_deadline = new_deadline
+
+            print(to_edit.task_deadline)
+            to_edit.save()
+
+        except:
+            raise Http404("Value not alowed")
+        return redirect('/edit.html')
+    return Http404("No task to edit")
+
+
 
 def del_todo(request):
     if request.method == "POST":
@@ -41,6 +66,6 @@ def del_todo(request):
             to_delete = Task.objects.get(id = id)
             to_delete.delete()
         except Task.DoesNotExist:
-            raise Http404("Task does not exist")    
+            raise Http404("Task does not exist")
         return redirect('/')
     return Http404("No task to delete")
