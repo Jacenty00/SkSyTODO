@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 from tasks.models import Task
-import datetime
+from datetime import datetime
+
 # Create your views here.
 def home_view(request):
 # Render the HTML template home.html
@@ -40,16 +41,12 @@ def edit_todo(request):
         new_text = request.POST['text']
         new_progress = request.POST['progress']
         new_deadline = request.POST['deadline']
-
-        print(request.POST)
         try:
+
             to_edit = Task.objects.get(id = id)
             to_edit.task_text = new_text
             to_edit.task_progress = new_progress
-            # TODO deadline
-            #to_edit.task_deadline = new_deadline
-
-            print(to_edit.task_deadline)
+            to_edit.task_deadline = datetime.strptime(new_deadline, "%m/%d/%Y")
             to_edit.save()
 
         except:

@@ -68,7 +68,7 @@
               Progress in %:
               <input type="text" name="progress" form = "e-{{task.id}}" id="TODO-{{task.id}}-progress" class="form-control progres" aria-label="Task" value="{{task.task_progress}}">
               Deadline:
-              <input class="form-control picker deadline "   name="deadline" form = "e-{{task.id}}" id="TODO-1-deadline" name="date" value="{{task.task_deadline}}" type="text"  />
+              <input class="form-control picker deadline "   name="deadline" form = "e-{{task.id}}" id="TODO-1-deadline" name="date" value="{{task.task_deadline|date:'m/d/Y'}}" type="text"  />
             </div>
             <div class="buttons">
 
