@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
-from tasks.models import Task
-from datetime import datetime
+from .models import Task
+from datetime import datetime, date
 
 # Create your views here.
 def home_view(request):
@@ -25,11 +25,11 @@ def add_todo(request):
     if request.method == "POST":
         text = request.POST['task']
         date_tmp = request.POST['date'].split('/')
-        date = datetime.date(int(date_tmp[2]), int(date_tmp[0]), int(date_tmp[1]))
+        deadline = date(int(date_tmp[2]), int(date_tmp[0]), int(date_tmp[1]))
         progress = int(request.POST['progress'])
-        if (progress < 0 or progress > 100) or (date - datetime.date.today()).days < 0:
+        if (progress < 0 or progress > 100) or (deadline - date.today()).days < 0:
             return redirect('/add/')
-        task = Task(task_text = text, task_progress = progress, task_deadline = date)
+        task = Task(task_text = text, task_progress = progress, task_deadline = deadline)
         task.save()
         return redirect('/')
     return Http404("No.")
