@@ -27,8 +27,7 @@ def add_todo(request):
         date_tmp = request.POST['date'].split('/')
         deadline = date(int(date_tmp[2]), int(date_tmp[0]), int(date_tmp[1]))
         progress = int(request.POST['progress'])
-        if (progress < 0 or progress > 100) or (deadline - date.today()).days < 0:
-            return redirect('/add/')
+        
         task = Task(task_text = text, task_progress = progress, task_deadline = deadline)
         task.save()
         return redirect('/')
