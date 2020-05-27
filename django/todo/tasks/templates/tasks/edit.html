@@ -66,9 +66,9 @@
           <div class="col-12 col-sm-4 edit">
             <div class="dates">
               Progress in %:
-              <input type="text" name="progress" form = "e-{{task.id}}" id="TODO-{{task.id}}-progress" class="form-control progres" aria-label="Task" value="{{task.task_progress}}">
+              <input type="text" pattern="([0-9][0-9]?|100)" name="progress" form = "e-{{task.id}}" id="TODO-{{task.id}}-progress" class="form-control progres" aria-label="Task" value="{{task.task_progress}}" required>
               Deadline:
-              <input class="form-control picker deadline "   name="deadline" form = "e-{{task.id}}" id="TODO-1-deadline" name="date" value="{{task.task_deadline|date:'m/d/Y'}}" type="text"  />
+              <input class="form-control picker deadline "  pattern="([0-1][0-9][/][0-3][0-9][/][0-9][0-9][0-9][0-9])" title="MaxDate 12/31/9999 " name="deadline" form = "e-{{task.id}}" id="TODO-1-deadline" name="date" value="{{task.task_deadline|date:'m/d/Y'}}" type="text"  />
             </div>
             <div class="buttons">
 
