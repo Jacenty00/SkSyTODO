@@ -42,6 +42,11 @@
 </div>
 </nav>
 <div class="container">
+<!--- Invalid date popup for passed date. -->
+{% if alert_flag %}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+<script>swal("Your deadline has already passed. Please enter a proper date.")</script>
+{% endif %}
 
 <form action="/add_todo/" method="post"> {% csrf_token %}
 <div class="input-group mb-3" style="margin-top: 15rem;">

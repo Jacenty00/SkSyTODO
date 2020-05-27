@@ -27,7 +27,8 @@ def add_todo(request):
         date_tmp = request.POST['date'].split('/')
         deadline = date(int(date_tmp[2]), int(date_tmp[0]), int(date_tmp[1]))
         progress = int(request.POST['progress'])
-
+        if (deadline - date.today()).days < 0:
+            return render(request, 'tasks/add.html', {'alert_flag': True})
         task = Task(task_text = text, task_progress = progress, task_deadline = deadline)
         task.save()
         return redirect('/')
