@@ -61,10 +61,11 @@
               </div>
               <div class="buttons">
                 <a href="edit.html#TODO-{{task.id}}" ><button class="editbtn"><img src="https://image.flaticon.com/icons/png/512/84/84380.png" alt="Edit" width="20" height="20">Edit</button></a>
-                <form action="/del_todo/" method="post"> {% csrf_token %}
-                <input type='hidden' value='{{task.id}}' name='id'>
-                <button class="deletebtn"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20"></button>
-                </form>
+
+
+                <form action="/del_todo/" method="post" id="d-{{task.id}}" style="display: none;"> {% csrf_token %}<input type='hidden' value='{{task.id}}' name='id'></form>
+                <button class="editbtn"  type="submit" form="d-{{task.id}}"  id ="TODO-{{task.id}}-delete"><img src="https://image.flaticon.com/icons/svg/1214/1214428.svg" alt="Edit" width="20" height="20">Delete</button>
+
               </div>
         </div>
     </div>
