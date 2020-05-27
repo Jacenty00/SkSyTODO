@@ -14,6 +14,8 @@
 
     <!-- Bootstrap Date-Picker Plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
     <title>TODO's</title>
   </head>
@@ -42,12 +44,6 @@
 </div>
 </nav>
 <div class="container">
-<!--- Invalid date popup for passed date. -->
-{% if alert_flag %}
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-<script>swal("Your deadline has already passed. Please enter a proper date.")</script>
-{% endif %}
-
 <form action="/add_todo/" method="post"> {% csrf_token %}
 <div class="input-group mb-3" style="margin-top: 15rem;">
 
@@ -78,6 +74,14 @@ $('#date').datepicker({
     todayBtn: "linked",
     autoclose: true,
     todayHighlight: true,
+});
+$('#date').datepicker().change(evt => {
+  var selectedDate = $('#date').datepicker('getDate');
+  var now = ( new Date() ).setHours(0,0,0,0); // Get today's date
+  if (selectedDate < now) {
+      swal("Your deadline has already passed. Please enter a proper date.");
+      $('#date').datepicker('update', ''); 
+  }
 });
 </script>
 
